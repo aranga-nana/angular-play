@@ -1,17 +1,20 @@
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { HeroComponent } from './hero.component';
+import { CommonModule }   from '@angular/common';
+import { HeroListComponent } from './hero-list.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroService } from './hero.service';
+
+import { HeroRoutingModule } from './hero-routing.module';
 
 @NgModule({
     declarations:[
-        HeroComponent,
+        HeroListComponent,
         HeroDetailComponent
     ],
-    imports: [FormsModule,BrowserModule],
-    exports: [HeroComponent]
+    imports: [FormsModule,CommonModule,HeroRoutingModule],
+    providers: [HeroService]
 })
 export class HeroModule{
 
