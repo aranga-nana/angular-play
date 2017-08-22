@@ -16,13 +16,27 @@ export class HeroService {
 
     getHeroById(id: number): Promise<Hero> {
         return new Promise((resolve, reject) => {
-            if (id == null ||
-                id >= HEROES.length) {
-                reject({ message: 'id not found' });
+            if (id == null) {
+                reject({ message: 'id cannot be null' });
 
             }
             else {
-                resolve(HEROES[id]);
+                let found = 0;
+                let i=0
+                HEROES.forEach(e => {
+                    if (e.id == id){
+                        found =i;
+                    }
+                    i++;
+                });
+                if (found){
+                    resolve(HEROES[found]);
+                    console.log('F')
+                }
+                else{
+                    reject({ message: 'id not found' });
+                }
+                
             }
 
         });

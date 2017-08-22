@@ -19,4 +19,10 @@ export class HeroDetailComponent implements OnInit{
             this.heroService.getHeroById(+params.get('id')))
                      .subscribe((hero: Hero) => this.hero = hero);    
     }
+
+
+
+    goToHeros():void{
+        this.router.navigate(['/heroes']);
+    }
 }
