@@ -12,6 +12,7 @@ import { HeroRoutingModule } from './hero-routing.module';
     declarations:[
         HeroListComponent,
         HeroDetailComponent
+        
     ],
     imports: [FormsModule,CommonModule,HeroRoutingModule],
     providers: [HeroService]
