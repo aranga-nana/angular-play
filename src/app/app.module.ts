@@ -9,6 +9,7 @@ import { AppRoutingMoudle } from './app-routing.module';
 
 import { CrisisModule } from './crisis/crisis.module';
 import { HeroModule } from './hero/hero.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HeroModule } from './hero/hero.module';
     BrowserModule,
     AppRoutingMoudle,
     CrisisModule,
-    HeroModule
+    HeroModule,
+    AuthModule
   ],
   declarations: [
     

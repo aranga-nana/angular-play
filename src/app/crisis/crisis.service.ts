@@ -12,4 +12,22 @@ export class CrisisService{
            }) ;
     }
 
+    getCrisisbyId(id:number):Promise<Crisis>{
+        return new Promise((resolve,reject)=>{
+                setTimeout(function(){
+                    let f:Crisis;
+                    CRISES.forEach(function(v,k){
+                        if (v.id==id){
+                            f=v;
+                        }
+                    });
+                    if (f != null){
+                        resolve(f);
+                        return;
+                    }
+                    reject({"message":"404"});
+            },300);
+        });
+    }
+
 }
